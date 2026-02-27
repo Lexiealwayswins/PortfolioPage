@@ -1,6 +1,3 @@
-console.log('[auth.middleware] JWT_SECRET from env:', process.env.JWT_SECRET);
-console.log('[auth.middleware] process.env loaded?', !!process.env.JWT_SECRET);
-
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { PrismaClient } from '@prisma/client';
@@ -9,7 +6,6 @@ const prisma = new PrismaClient();
 
 // JWT secret
 const JWT_SECRET = process.env.JWT_SECRET || 'your_super_secret_key_change_this_in_production';
-console.log('JWT_SECRET used for verification:', JWT_SECRET);
 // extend Request type，add user
 export interface AuthRequest extends Request {
   user?: {

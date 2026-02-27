@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import { body, validationResult } from 'express-validator';
-import { authenticate, AuthRequest } from '../middleware/auth.middleware';
-import { getPrismaClient } from '../config/database';
+import { authenticate, AuthRequest } from '../middleware/auth.middleware.js';
+import { getPrismaClient } from '../config/database.js';
 
 const router = express.Router();
 const prisma = await getPrismaClient();

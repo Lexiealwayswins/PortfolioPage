@@ -8,10 +8,10 @@ import { fileURLToPath } from 'url';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import hpp from 'hpp';
-import { connectDatabase } from './config/database';
-import authRoutes from './routes/auth.routes';
-import visitorRoutes from './routes/visitor.routes';
-import contactRoutes from './routes/contact.routes';
+import { connectDatabase } from './config/database.js';
+import authRoutes from './routes/auth.routes.js';
+import visitorRoutes from './routes/visitor.routes.js';
+import contactRoutes from './routes/contact.routes.js';
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -55,6 +55,10 @@ app.use(cors({
 }));
 
 // API Routes (must come before static files)
+// app.use('api/visitors', visitorRoutes);
+// app.use('api/contact', contactRoutes);
+// app.use('api/auth', authRoutes);
+
 app.use('/visitors', visitorRoutes);
 app.use('/contact', contactRoutes);
 app.use('/auth', authRoutes);
@@ -142,6 +146,8 @@ const contactLimiter = rateLimit({
 });
 
 // Apply rate limiting
+// app.use('api/', limiter);
+// app.use('api/contact', contactLimiter);
 app.use('/', limiter);
 app.use('/contact', contactLimiter);
 

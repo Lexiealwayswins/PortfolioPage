@@ -1,15 +1,11 @@
-console.log('[auth.routes] JWT_SECRET from env:', process.env.JWT_SECRET);
-console.log('[auth.routes] process.env loaded?', !!process.env.JWT_SECRET);
-
 // src/routes/auth.routes.ts
 import express, { Request, Response } from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { getPrismaClient } from '../config/database';
+import { getPrismaClient } from '../config/database.js';
 
 const router = express.Router();
 const JWT_SECRET = process.env.JWT_SECRET || 'your_super_secret_key_change_this_in_production';
-console.log('JWT_SECRET used for signing:', JWT_SECRET);
 
 router.post('/login', async (req: Request, res: Response) => {
   const prisma = await getPrismaClient();
