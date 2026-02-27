@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Lexie - Software Engineer, Full-Stack Developer, System Optimizer, Problem Solver. Building innovative web applications that make a real impact." />
+    <meta name="keywords" content="Lexie, Software Development, Web Development, Full Stack,  React, TypeScript, Portfolio" />
+    <meta name="author" content="Lexie" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Lexie | Software Engineer, Full-Stack Developer, System Optimizer, Problem Solver" />
+    <meta property="og:description" content="Building innovative web applications that make a real impact." />
+    <meta property="og:image" content="https://res.cloudinary.com/dyycmwk8h/image/upload/v1771995169/Avatar_kvssqz.png" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lexie| Software Engineer, Full-Stack Developer, System Optimizer, Problem Solver" />
+    <meta name="twitter:description" content="Building innovative web applications that make a real impact." />
+    <meta name="twitter:image" content="https://res.cloudinary.com/dyycmwk8h/image/upload/v1771995169/Avatar_kvssqz.png" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dyycmwk8h/image/upload/v1771995169/Avatar_kvssqz.png" />
+    
+    <title>Lexie D | Software Engineer, Full-Stack Developer, System Optimizer, Problem Solver</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      // Prevents "flash of unstyled content" for dark/light mode
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+    <style>
+      /* Custom scrollbar for a more modern look */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9; /* bg-slate-100 */
+      }
+      .dark ::-webkit-scrollbar-track {
+        background: #000; /* bg-black */
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #64748b; /* bg-slate-500 */
+        border-radius: 4px;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #f97316; /* bg-orange-500 */
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #334155; /* bg-slate-700 */
+      }
+      .dark ::-webkit-scrollbar-thumb:hover {
+        background: #fbbf24; /* bg-amber-400 */
+      }
+      html {
+        scrollbar-gutter: stable;
+        overflow-y: scroll;
+        overflow-x: clip;
+      }
+      body {
+        font-family: 'Rajdhani', sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: clip;
+        width: 100%;
+        max-width: 100vw;
+        position: relative;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+    </style>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+  </head>
+  <body class="bg-slate-50 text-slate-600 dark:bg-black dark:text-gray-300 font-sans">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
