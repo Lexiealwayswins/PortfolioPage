@@ -1,5 +1,5 @@
 import React from 'react';
-import { MailIcon, GithubIcon, PageIcon } from '../constants';
+import { MailIcon, GithubIcon, LinkedInIcon } from '../constants';
 import ContactForm from './ContactForm';
 
 const CONTACT_INFO = [
@@ -16,10 +16,10 @@ const CONTACT_INFO = [
         href: "https://github.com/Lexiealwayswins",
     },
     {
-        Icon: PageIcon,
-        label: "Personal Page",
-        value: "Lexie's page",
-        href: "#",
+        Icon: LinkedInIcon,
+        label: "LinkedIn",
+        value: "Lexie Duan",
+        href: "https://www.linkedin.com/in/lexie-duan-95aa23306/",
     },
 ];
 

@@ -50,7 +50,7 @@ const App: React.FC = () => {
 
   return (
       <ErrorBoundary>
-        <div className="min-h-screen bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 text-slate-600 dark:text-gray-200" style={{ overflowX: 'clip' }}>
+        <div className="min-h-screen bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 text-slate-600 dark:text-gray-200" style={{ overflowX: 'clip'}}>
           <SEO />
           <SkipToContent />
           <ScrollProgress />
@@ -68,7 +68,6 @@ const App: React.FC = () => {
                         <div className="md:sticky md:z-10 md:top-4 md:self-start md:max-h-[calc(100vh-2rem)] overflow-y-auto min-w-0">
                           <Card />
                         </div>
-                        
                       </aside>
                       <section className="md:col-span-2 min-w-0">
                         <Hero />
@@ -86,16 +85,14 @@ const App: React.FC = () => {
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
-          <div className="sticky bottom-0 right-0 z-50 flex justify-end">
-            <div className="flex flex-col gap-4 items-end self-end">
-              <ScrollToTopButton />
-              <ChatbotIcon 
-                onClick={() => setIsChatbotOpen(!isChatbotOpen)} 
-                isOpen={isChatbotOpen}
-              />
-            </div>
-          </div>
           <Footer />
+          <div className="fixed bottom-10 right-10 z-[9999] flex flex-col gap-4 items-end">
+            <ScrollToTopButton />
+            <ChatbotIcon 
+              onClick={() => setIsChatbotOpen(!isChatbotOpen)} 
+              isOpen={isChatbotOpen}
+            />
+          </div>
           {selectedProject && <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />}
           {isChatbotOpen && <Chatbot onClose={() => setIsChatbotOpen(false)} />}
         </div>

@@ -162,11 +162,11 @@ export const STATS_DATA: Stat[] = [
 // ];
 export const EXPERTISE_DATA = [
     {
-        title: 'Full-Stack Development',
+        title: 'Full-Stack Dev',
         skills: [
-            { name: 'React & Next.js Frontend', Icon: CodeIcon },
+            { name: 'React & Next Frontend', Icon: CodeIcon },
             { name: 'TypeScript& JavaScript', Icon: CodeIcon },
-            { name: 'Node.js & Django Backend', Icon: CodeIcon },
+            { name: 'Node & Django Backend', Icon: CodeIcon },
         ],
     },
     {

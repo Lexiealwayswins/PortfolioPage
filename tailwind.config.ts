@@ -20,6 +20,11 @@ export default {
     'top-0',
     'md:top-4',
     'top-4',
+
+    'fixed',
+    'bottom-10',
+    'right-10',
+    'z-[9999]',           
   ],
   darkMode: 'class',
   theme: {

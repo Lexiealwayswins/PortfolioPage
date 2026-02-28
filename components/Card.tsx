@@ -4,12 +4,12 @@ import { GithubIcon, YoutubeIcon, LinkedInIcon, TwitterIcon, FacebookIcon, MailI
 
 const Card: React.FC = () => {
   const socialLinks = [
-    { Icon: PageIcon, href: '#', label: 'PortfolioPage' },
-    { Icon: GithubIcon, href: '#', label: 'GitHub' },
-    { Icon: YoutubeIcon, href: '#', label: 'YouTube' },
-    { Icon: LinkedInIcon, href: '#', label: 'LinkedIn' },
-    { Icon: TwitterIcon, href: '#', label: 'Twitter' },
-    { Icon: FacebookIcon, href: '#', label: 'Facebook' },
+    { Icon: PageIcon, href: 'https://portfolio-page-two-ruddy.vercel.app/', label: 'PortfolioPage' },
+    { Icon: GithubIcon, href: 'https://github.com/Lexiealwayswins', label: 'GitHub' },
+    { Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/lexie-duan-95aa23306/', label: 'LinkedIn' },
+    // { Icon: YoutubeIcon, href: '#', label: 'YouTube' },
+    // { Icon: TwitterIcon, href: '#', label: 'Twitter' },
+    // { Icon: FacebookIcon, href: '#', label: 'Facebook' },
   ];
   return (
     <section id="card" className="py-12 sm:py-16 md:py-20">
@@ -26,7 +26,7 @@ const Card: React.FC = () => {
               <img src="https://res.cloudinary.com/dyycmwk8h/image/upload/v1771995169/Avatar_kvssqz.png" alt="EliTechWiz" className="w-full h-full object-cover rounded-lg" loading="lazy" width="256" height="256" />
             </div>
           </motion.div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-center text-slate-900 dark:text-white">Lexie D</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-center text-slate-900 dark:text-white">Lexie</h2>
           <h2 className="text-sm sm:text-base text-center text-slate-900 dark:text-white bg-orange-100/70 hover:bg-amber-500 dark:hover:bg-amber-600 hover:text-white hover:scale-105 dark:bg-slate-700/50 px-4 mb-2 rounded-md">Software Engineer</h2>
           <div className="w-full h-0.5 bg-gray-300/50 mx-auto"></div>
           <motion.div 
@@ -40,7 +40,7 @@ const Card: React.FC = () => {
               <div className="flex flex-row pb-4">
                 <a
                   key="Email"
-                  href="#"
+                  href="mailto:lexiedlx@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Email"
@@ -56,7 +56,7 @@ const Card: React.FC = () => {
                 <div className="flex flex-row">
                 <a
                   key="Location"
-                  href="#"
+                  href="https://www.google.com/maps?q=Vancouver,+BC,+CA"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Location"
@@ -73,7 +73,7 @@ const Card: React.FC = () => {
             {/* <p className="text-base sm:text-lg text-slate-600 dark:text-gray-300 mb-8">
               A Software Engineer with a passion for building products that make a real impact.
             </p> */}
-            <div className="flex items-center justify-center space-x-2 md:space-x-1 lg:space-x-2 pb-4">
+            <div className="flex items-center justify-center space-x-6 pb-4">
               {socialLinks.map(({ Icon, href, label }) => (
                 <a
                   key={label}

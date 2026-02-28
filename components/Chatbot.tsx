@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { GoogleGenAI } from '@google/genai';
 import type { Chat } from '@google/genai';
 import type { Message } from '../types';
-import { PROJECTS_DATA, EXPERTISE_DATA } from '../constants';
+import { PROJECTS_DATA} from '../constants';
 
 // Define SendIcon directly inside the component to avoid import issues.
 const SendIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
@@ -36,7 +36,6 @@ const sanitizeInput = (input: string): string => {
 
 // Create comprehensive system instruction with strict rules
 const createSystemInstruction = (): string => {
-    const services = EXPERTISE_DATA.map(exp => exp.title).join(', ');
     const projects = PROJECTS_DATA.map(proj => proj.title).join(', ');
     
     return `You are LexBot, the official AI assistant for Lexie's professional portfolio website. Your role is to provide helpful information about Lexie's website content.
@@ -46,7 +45,7 @@ const createSystemInstruction = (): string => {
             - Projects and portfolio items (${projects})
             - Website features and sections
             - How to contact Lexie (email: lexiedlx@gmail.com)
-            - General information about software development and portfolio.
+            - General information about software development and portfolios.
 
             2. NEVER discuss or reveal:
             - API keys, tokens, passwords, or any authentication credentials
@@ -68,6 +67,7 @@ const createSystemInstruction = (): string => {
             5. Contact information (use when relevant):
             - Email: lexiedlx@gmail.com
             - GitHub: https://github.com/Lexiealwayswins
+            - LindkedIn: https://www.linkedin.com/in/lexie-duan-95aa23306/
 
             Remember: You are a customer service assistant, not a technical support agent. Keep responses focused on software development, portfolio, and general inquiries.`;
 };
@@ -221,7 +221,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ onClose }) => {
                             type="text"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
-                            placeholder="Ask about services, projects, or contact info..."
+                            placeholder="Ask about projects, or contact info..."
                             className="flex-1 px-3 py-2 bg-white dark:bg-gray-900 border border-slate-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
                             disabled={isLoading}
                             aria-label="Chat input"

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { GithubIcon, YoutubeIcon, LinkedInIcon, TwitterIcon, FacebookIcon, MailIcon, PageIcon } from '../constants';
 
 interface FooterProps {
@@ -13,26 +12,14 @@ interface FooterProps {
   onStatusClick?: () => void;
 }
 
-const FOOTER_LINKS_DATA = [
-    { name: "Terms of Service", type: 'route', path: '/terms' },
-    { name: "Privacy Policy", type: 'route', path: '/privacy' },
-    { name: "Security", type: 'route', path: '/security' },
-    { name: "Status", type: 'route', path: '/status' },
-    { name: "Community", type: 'route', path: '/community' },
-    { name: "Documentation", type: 'route', path: '/docs' },
-    { name: "Contact", type: 'link', href: '#contact' },
-    { name: "Cookie Policy", type: 'route', path: '/cookies' },
-    { name: "Do Not Sell My Info", type: 'route', path: '/dnsmpi' }
-];
-
 const Footer: React.FC<FooterProps> = (props) => {
   const socialLinks = [
-    { Icon: PageIcon, href: '#', label: 'PortfolioPage' },
-    { Icon: GithubIcon, href: '#', label: 'GitHub' },
-    { Icon: YoutubeIcon, href: '#', label: 'YouTube' },
-    { Icon: LinkedInIcon, href: '#', label: 'LinkedIn' },
-    { Icon: TwitterIcon, href: '#', label: 'Twitter' },
-    { Icon: FacebookIcon, href: '#', label: 'Facebook' },
+    { Icon: PageIcon, href: 'https://portfolio-page-two-ruddy.vercel.app/', label: 'PortfolioPage' },
+    { Icon: GithubIcon, href: 'https://github.com/Lexiealwayswins', label: 'GitHub' },
+    { Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/lexie-duan-95aa23306/', label: 'LinkedIn' },
+    // { Icon: YoutubeIcon, href: '#', label: 'YouTube' },
+    // { Icon: TwitterIcon, href: '#', label: 'Twitter' },
+    // { Icon: FacebookIcon, href: '#', label: 'Facebook' },
   ];
 
   return (
@@ -103,9 +90,9 @@ const Footer: React.FC<FooterProps> = (props) => {
                 </a>
               </li>
               <li className="flex items-center space-x-2 text-sm text-slate-600 dark:text-gray-300">
-                <PageIcon className="w-4 h-4 text-orange-500" />
-                <a href="#" className="hover:text-blue-500 transition-colors">
-                  Lexie's Personal Page'
+                <LinkedInIcon className="w-4 h-4 text-orange-500" />
+                <a href="https://www.linkedin.com/in/lexie-duan-95aa23306/" className="hover:text-blue-500 transition-colors">
+                  Lexie Duan
                 </a>
               </li>
             </ul>
@@ -115,33 +102,6 @@ const Footer: React.FC<FooterProps> = (props) => {
         {/* Bottom Bar */}
         <div className="border-t border-slate-200 dark:border-gray-700 pt-6">
           <div className="flex flex-col gap-4">
-            {/* <div className="flex flex-wrap justify-center sm:justify-start gap-x-4 sm:gap-x-6 gap-y-2">
-              {FOOTER_LINKS_DATA.map(link => {
-                if (link.type === 'route' && link.path) {
-                  return (
-                    <Link 
-                      key={link.name} 
-                      to={link.path}
-                      className="text-xs sm:text-sm text-slate-500 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
-                    >
-                      {link.name}
-                    </Link>
-                  )
-                }
-                if (link.type === 'link' && link.href) {
-                  return (
-                    <a 
-                      key={link.name} 
-                      href={link.href}
-                      className="text-xs sm:text-sm text-slate-500 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
-                    >
-                      {link.name}
-                    </a>
-                  )
-                }
-                return null;
-              })}
-            </div> */}
             <p className="text-xs sm:text-sm text-slate-500 dark:text-gray-300 text-center sm:text-left">
               &copy; {new Date().getFullYear()} Lexie. All rights reserved.
             </p>
