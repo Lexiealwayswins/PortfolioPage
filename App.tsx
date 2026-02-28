@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useMemo, useCallback, Suspense } from 'react';
+import React, { useState, useEffect} from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { initVisitorTracking } from './utils/visitorTracking';
+import { initVisitorTracking } from './utils/visitorTracking.js';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Card from './components/Card';
@@ -50,7 +50,7 @@ const App: React.FC = () => {
 
   return (
       <ErrorBoundary>
-        <div className="min-h-screen bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 text-slate-600 dark:text-gray-200 min-h-screen" style={{ overflowX: 'clip' }}>
+        <div className="min-h-screen bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 text-slate-600 dark:text-gray-200" style={{ overflowX: 'clip' }}>
           <SEO />
           <SkipToContent />
           <ScrollProgress />
@@ -64,8 +64,11 @@ const App: React.FC = () => {
                 <>
                   <div className="w-full py-12">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-10 lg:gap-12 w-full items-start">
-                      <aside className="md:col-span-1 md:sticky md:z-10 md:top-4 md:self-start md:max-h-[calc(100vh-2rem)] overflow-y-auto min-w-0">
-                        <Card />
+                      <aside className="md:col-span-1">
+                        <div className="md:sticky md:z-10 md:top-4 md:self-start md:max-h-[calc(100vh-2rem)] overflow-y-auto min-w-0">
+                          <Card />
+                        </div>
+                        
                       </aside>
                       <section className="md:col-span-2 min-w-0">
                         <Hero />

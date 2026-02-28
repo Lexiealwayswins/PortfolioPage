@@ -200,12 +200,12 @@ export const PROJECTS_DATA: Project[] = [
     },
     {
         title: 'Portfolio Website',
-        description: 'A modern, responsive portfolio website with a full content management system, visitor analytics, and more.',
-        longDescription: 'A fully responsive, modern portfolio website built from scratch using React, TypeScript, and Tailwind CSS. Features include a dark/light mode toggle, smooth animations with Framer Motion, and a clean, professional design.',
+        description: 'A modern full-stack portfolio with Prisma + PostgreSQL backend, visitor analytics, JWT auth, and Gemini AI assistant.',
+        longDescription: 'A high-performance, responsive portfolio website developed with React 18, TypeScript, Vite, Tailwind CSS, and Framer Motion. Includes visitor tracking & analytics API, role-based admin access (JWT), AI chatbot integration (Google Gemini), secure contact form, dark mode, smooth transitions, and serverless deployment on Vercel with Neon PostgreSQL.',
         imageUrl: 'https://res.cloudinary.com/dyycmwk8h/image/upload/v1772076719/devices_xexikj.webp',
         tags: ['Full-stack', 'React', 'TypeScript', 'Node.js', 'Prisma','TailwindCSS'],
         repoUrl: 'https://github.com/Lexiealwayswins/PortfolioPage',
-        liveUrl: '#',
+        liveUrl: 'https://portfolio-page-two-ruddy.vercel.app',
     },
     {
         title: 'Bunny E-commerce',

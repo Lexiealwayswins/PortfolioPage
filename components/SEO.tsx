@@ -14,7 +14,7 @@ const DEFAULTS = {
   description:
     'Software Engineer, Full-Stack Developer, System Optimizer, Problem Solver. Building innovative web applications that make a real impact.',
   image: 'https://res.cloudinary.com/dyycmwk8h/image/upload/v1771995169/Avatar_kvssqz.png',
-  url: 'https://lexie-portfolio.vercel.app'
+  url: 'https://portfolio-page-two-ruddy.vercel.app'
 };
 
 const SEO: React.FC<SEOProps> = ({ title = DEFAULTS.title, description = DEFAULTS.description, image = DEFAULTS.image, url = DEFAULTS.url, canonical, type = 'website' }) => {
@@ -67,10 +67,10 @@ const SEO: React.FC<SEOProps> = ({ title = DEFAULTS.title, description = DEFAULT
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: 'Lexie',
-      url: 'https://lexie-portfolio.vercel.app',
+      url: 'https://portfolio-page-two-ruddy.vercel.app',
       potentialAction: {
         '@type': 'SearchAction',
-        target: 'https://lexie-portfolio.vercel.app/?q={search_term_string}',
+        target: 'https://portfolio-page-two-ruddy.vercel.app/?q={search_term_string}',
         'query-input': 'required name=search_term_string'
       }
     });
@@ -80,7 +80,7 @@ const SEO: React.FC<SEOProps> = ({ title = DEFAULTS.title, description = DEFAULT
       '@context': 'https://schema.org',
       '@type': 'Person',
       name: 'EliTechWiz',
-      url: 'https://lexie-portfolio.vercel.app',
+      url: 'https://portfolio-page-two-ruddy.vercel.app',
       image: 'https://res.cloudinary.com/dyycmwk8h/image/upload/v1771995169/Avatar_kvssqz.png',
       jobTitle: 'Software Engineer, Full-Stack Developer, System Optimizer, Problem Solver',
       description: 'Software Engineer, Full-Stack Developer, System Optimizer, Problem Solver. Building innovative web applications that make a real impact.',
