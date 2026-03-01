@@ -86,7 +86,7 @@ const App: React.FC = () => {
             </Routes>
           </main>
           <Footer />
-          <div className="fixed bottom-10 right-10 z-[9999] flex flex-col gap-4 items-end">
+          <div className="fixed bottom-10 right-10 z-[999] flex flex-col gap-4 items-end">
             <ScrollToTopButton />
             <ChatbotIcon 
               onClick={() => setIsChatbotOpen(!isChatbotOpen)} 

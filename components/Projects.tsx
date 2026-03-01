@@ -10,7 +10,7 @@ interface ProjectsProps {
 const Projects: React.FC<ProjectsProps> = ({ onProjectClick }) => {
     return (
         <section id="projects" className="py-12 sm:py-16 md:py-20">
-            <h2 className="text-2xl sm:text-3xl font-bold text-center text-slate-900 dark:text-white mb-4 px-4">Portfolio</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-center text-slate-900 dark:text-white mb-4 px-4">My Portfolio</h2>
             <div className="w-20 h-1 bg-orange-500 mx-auto mb-8 sm:mb-12"></div>
             <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-4 sm:px-6">
                 {PROJECTS_DATA.map((project, index) => (

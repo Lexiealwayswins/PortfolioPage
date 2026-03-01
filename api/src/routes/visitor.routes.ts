@@ -57,7 +57,6 @@ router.post('/track', async (req: Request, res: Response) => {
       isNewVisitor: visitor.isNewVisitor 
     });
   } catch (error: any) {
-    console.error('Visitor tracking error:', error);
     res.status(500).json({ success: false, message: 'Failed to track visitor' });
   }
 });

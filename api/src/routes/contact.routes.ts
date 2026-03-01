@@ -30,10 +30,8 @@ router.post('/submit', [
     const userAgent = req.headers['user-agent'] || 'unknown';
 
     // Verify Cloudflare Turnstile
-    const secretKey = process.env.CLOUDFLARE_TURNSTILE_SECRET;
-    if (!secretKey) {
-      console.warn('TURNSTILE_SECRET not set — skipping verification');
-    } else {
+    const secretKey = process.env.VITE_CLOUDFLARE_TURNSTILE_SECRET;
+    if (secretKey) {
       try {
         const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
           method: 'POST',
@@ -49,8 +47,7 @@ router.post('/submit', [
           return res.status(400).json({ success: false, message: 'Captcha verification failed', errors: outcome['error-codes'], });
         }
       } catch (err) {
-        console.error('Turnstile verify error:', err);
-        return res.status(500).json({ success: false, message: '服务器验证错误' });
+        return res.status(500).json({ success: false, message: 'Server Verification Error' });
       }
     }
 
@@ -94,7 +91,6 @@ router.post('/submit', [
       id: contactMessage._id
     });
   } catch (error: any) {
-    console.error('Contact submission error:', error);
     res.status(500).json({ 
       success: false,
       message: 'Failed to submit message. Please try again later.' 
@@ -116,9 +112,6 @@ router.get('/', authenticate, async (req: AuthRequest, res: Response) => {
     
     const messages = await prisma.contactMessage.findMany({
       where: query,
-      include: {
-        repliedBy: { select: { name: true, email: true } }  
-      },
       orderBy: { createdAt: 'desc' },
       take: Number(limit),
       skip,

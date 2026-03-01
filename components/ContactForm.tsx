@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 const ContactForm: React.FC = () => {
@@ -13,6 +13,66 @@ const ContactForm: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const siteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY || '';
+
+  const turnstileContainerRef = useRef<HTMLDivElement>(null);
+  const [turnstileWidgetId, setTurnstileWidgetId] = useState<string | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState<string>('');
+  const hasRendered = useRef(false);
+
+  useEffect(() => {
+    if (hasRendered.current) return;
+    hasRendered.current = true;
+
+    if (!siteKey || !turnstileContainerRef.current) return;
+
+    const loadAndRender = () => {
+      if (window.turnstile && turnstileContainerRef.current) {
+        if (turnstileContainerRef.current.querySelector('iframe')) {
+          return;
+        }
+        try {
+          const widgetId = window.turnstile.render(turnstileContainerRef.current, {
+            sitekey: siteKey,
+            theme: 'auto',           
+            size: 'normal',
+            appearance: 'always',    // 'always', 'interaction-only' or 'execute'
+            callback: (token: string) => {
+              setTurnstileToken(token);
+            },
+            'error-callback': (err: string) => {
+              setError('Failed to load verify code, please refresh');
+            },
+            'expired-callback': () => {
+              setTurnstileToken('');
+            },
+          });
+          setTurnstileWidgetId(widgetId);
+        } catch (err) {
+          setError('Failed to initialize verify code');
+        }
+      }
+    };
+
+    // wait turnstile ready
+    if (window.turnstile) {
+      loadAndRender();
+    } else {
+      const interval = setInterval(() => {
+        if (window.turnstile) {
+          clearInterval(interval);
+          loadAndRender();
+        }
+      }, 200);
+
+      return () => clearInterval(interval);
+    }
+
+    return () => {
+      if (turnstileWidgetId) {
+        window.turnstile?.remove(turnstileWidgetId);
+      }
+    };
+  }, [siteKey]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -29,7 +89,7 @@ const ContactForm: React.FC = () => {
     try {
       const tokenInput = document.querySelector('input[name="cf-turnstile-response"]') as HTMLInputElement | null;
       const turnstileToken = tokenInput?.value || '';
-      if (!turnstileToken) {
+      if (!turnstileToken || turnstileToken.length < 20) {
         throw new Error('Please complete the CAPTCHA verification.');
       }
       const apiUrl = import.meta.env.VITE_API_URL || '';
@@ -49,10 +109,11 @@ const ContactForm: React.FC = () => {
 
       setSubmitted(true);
       setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      setTurnstileToken('');  // Empty token
+
       // Reset the token by reloading the widget container
-      const container = document.getElementById('cf-turnstile-container');
-      if (container) {
-        container.innerHTML = `<div class="cf-turnstile" data-sitekey="${siteKey}" data-theme="auto"></div>`;
+      if (turnstileWidgetId) {
+        window.turnstile?.reset(turnstileWidgetId);
       }
       
       setTimeout(() => {
@@ -60,7 +121,6 @@ const ContactForm: React.FC = () => {
       }, 5000);
     } catch (err: any) {
       setError(err.message || 'Failed to send message. Please try again.');
-      console.error('Contact form error:', err);
     } finally {
       setLoading(false);
     }
@@ -166,8 +226,9 @@ const ContactForm: React.FC = () => {
             placeholder="Tell me about your project or tech stack..."
           />
         </div>
-        <div id="cf-turnstile-container" className="mt-2">
-          <div className="cf-turnstile" data-sitekey={siteKey} data-theme="auto"></div>
+        <div className="mt-4 flex justify-center min-h-[78px] items-center">
+          {/* <div className="cf-turnstile min-h-[80px] w-full" data-sitekey={siteKey} data-theme="auto"></div> */}
+          <div ref={turnstileContainerRef} id="cf-turnstile-container" />
         </div>
         <button
           type="submit"

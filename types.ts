@@ -20,3 +20,30 @@ export interface Message {
   sender: 'user' | 'ai';
   text: string;
 }
+
+/* -------------------------------------------------------
+   Turnstile type declaration (supports render/remove)
+   ------------------------------------------------------- */
+declare global {
+  interface Window {
+    turnstile: {
+      render: (
+        element: string | HTMLElement,
+        options: {
+          sitekey: string;
+          theme?: 'light' | 'dark' | 'auto';
+          size?: 'normal' | 'compact';
+          appearance?: 'always' | 'execute' | 'interaction-only';
+          callback?: (token: string) => void;
+          'error-callback'?: (error: string) => void;
+          'expired-callback'?: () => void;
+        }
+      ) => string; // widgetId
+
+      reset: (widgetId?: string) => void;
+      remove: (widgetId: string) => void;
+    };
+  }
+}
+
+export {};

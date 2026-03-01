@@ -169,7 +169,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ onClose }) => {
     };
 
     return (
-        <div className="fixed bottom-20 right-5 z-[60]" aria-live="polite">
+        <div className="fixed bottom-20 right-5 z-[9999]" aria-live="polite">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

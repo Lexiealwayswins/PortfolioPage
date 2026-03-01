@@ -24,7 +24,8 @@ export default {
     'fixed',
     'bottom-10',
     'right-10',
-    'z-[9999]',           
+    'z-[999]',          
+    'z-[9999]', 
   ],
   darkMode: 'class',
   theme: {

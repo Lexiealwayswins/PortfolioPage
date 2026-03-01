@@ -18,7 +18,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-// const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5001;
 
 // Database connection - PostgreSQL only (using Prisma)
 (async () => {
@@ -42,22 +42,22 @@ app.use(express.urlencoded({ extended: true }));  // Optional, to parse form-url
 
 // CORS configuration
 app.use(cors({
-  // origin: [
-  //   'http://localhost:5173',     // Vite default port
-  //   'http://127.0.0.1:5173',     // Sometimes the browser uses this
-  //   'http://localhost:3000',     // If you've used the React default port
-  //   // Add production domain here, e.g. 'https://yourdomain.com'
-  // ],
-  origin: true,
+  origin: [
+    'http://localhost:5173',     // Vite default port
+    'http://127.0.0.1:5173',     // Sometimes the browser uses this
+    'http://localhost:3000',     // If you've used the React default port
+    'https://portfolio-page-two-ruddy.vercel.app/'
+    // Add production domain here, e.g. 'https://yourdomain.com'
+  ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 // API Routes (must come before static files)
-// app.use('api/visitors', visitorRoutes);
-// app.use('api/contact', contactRoutes);
-// app.use('api/auth', authRoutes);
+// app.use('/api/visitors', visitorRoutes);
+// app.use('/api/contact', contactRoutes);
+// app.use('/api/auth', authRoutes);
 
 app.use('/visitors', visitorRoutes);
 app.use('/contact', contactRoutes);
@@ -146,8 +146,9 @@ const contactLimiter = rateLimit({
 });
 
 // Apply rate limiting
-// app.use('api/', limiter);
-// app.use('api/contact', contactLimiter);
+// app.use('/api/', limiter);
+// app.use('/api/contact', contactLimiter);
+
 app.use('/', limiter);
 app.use('/contact', contactLimiter);
 
@@ -163,7 +164,11 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // Health check
-app.get('/api/health', (req, res) => {
+// app.get('/api/health', (req, res) => {
+//   res.json({ status: 'ok', message: 'Server is running' });
+// });
+
+app.get('/health', (req, res) => {
   res.json({ status: 'ok', message: 'Server is running' });
 });
 
