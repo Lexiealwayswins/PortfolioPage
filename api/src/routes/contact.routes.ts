@@ -140,9 +140,6 @@ router.get('/:id', authenticate, async (req: AuthRequest, res: Response) => {
   try {
     const message = await prisma.contactMessage.findUnique({
       where: { id: req.params.id },
-      include: {
-        repliedBy: { select: { name: true, email: true } }
-      }
     });
 
     if (!message) {
