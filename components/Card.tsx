@@ -23,7 +23,7 @@ const Card: React.FC = () => {
             className="relative"
           >
             <div className="w-56 h-56 sm:w-52 sm:h-52 md:w-50 md:h-50 rounded-xl shadow-lg border-4 border-orange-400/30">
-              <img src="https://res.cloudinary.com/dyycmwk8h/image/upload/v1771995169/Avatar_kvssqz.png" alt="EliTechWiz" className="w-full h-full object-cover rounded-lg" loading="lazy" width="256" height="256" />
+              <img src="https://res.cloudinary.com/dyycmwk8h/image/upload/v1771995169/Avatar_kvssqz.png" alt="Lexie" className="w-full h-full object-cover rounded-lg" loading="lazy" width="256" height="256" />
             </div>
           </motion.div>
           <h2 className="text-2xl sm:text-3xl font-bold text-center text-slate-900 dark:text-white">Lexie</h2>

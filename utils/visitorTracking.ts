@@ -25,7 +25,7 @@ export const trackPageVisit = async (path: string = window.location.pathname) =>
 
   try {
     const apiUrl = import.meta.env.VITE_API_URL || '';
-    await fetch(`${apiUrl}/api/visitors/track`, {
+    await fetch(`${apiUrl}/visitors/track`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ export const trackPageVisit = async (path: string = window.location.pathname) =>
 export const trackPageDuration = async (duration: number) => {
   try {
     const apiUrl = import.meta.env.VITE_API_URL || '';
-    await fetch(`${apiUrl}/api/visitors/track`, {
+    await fetch(`${apiUrl}/visitors/track`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -93,7 +93,7 @@ export const initVisitorTracking = () => {
         sessionId: getSessionId(),
         duration: Math.round(duration),
       });
-      navigator.sendBeacon(`${apiUrl}/api/visitors/track`, data);
+      navigator.sendBeacon(`${apiUrl}/visitors/track`, data);
     }
   });
 };
