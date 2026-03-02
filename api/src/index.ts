@@ -18,7 +18,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = process.env.PORT || 5001;
+// const PORT = process.env.PORT || 5001;
 
 // Database connection - PostgreSQL only (using Prisma)
 (async () => {
@@ -79,16 +79,18 @@ app.use(helmet({
         // Allow Tailwind CDN for runtime styles in current setup
         "https://cdn.tailwindcss.com",
         // Allow any scripts bundled to call out to aistudiocdn if referenced
-        "https://aistudiocdn.com"
+        "https://aistudiocdn.com",
+        // Allow Cloudflare Turnstile scripts for captcha
+        "https://challenges.cloudflare.com"
       ],
       styleSrc: [
         "'self'",
         "'unsafe-inline'",
         "https://fonts.googleapis.com"
       ],
-      imgSrc: ["'self'", "data:", "https:"],
+      imgSrc: ["'self'", "data:", "https:", "https://*.cloudflare.com"],
       fontSrc: ["'self'", "https://fonts.gstatic.com", "data:"],
-      connectSrc: ["'self'", "http://localhost:5001", "https:"],
+      connectSrc: ["'self'", "http://localhost:5001", "https://portfolio-page-two-ruddy.vercel.app", "https://challenges.cloudflare.com", "https:"],
       upgradeInsecureRequests: []
     }
   },
@@ -122,6 +124,10 @@ app.use((req, res, next) => {
       'usb=()'
     ].join(', ')
   );
+  res.setHeader( 
+    "Content-Security-Policy", 
+    "default-src 'self'; script-src 'self' https://challenges.cloudflare.com 'unsafe-inline'; frame-src 'self' https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com;" )
+  ;
   // Reduce XSS risk from inline event handlers (kept 'unsafe-inline' in CSP for now due to setup)
   res.setHeader('X-Permitted-Cross-Domain-Policies', 'none');
   next();

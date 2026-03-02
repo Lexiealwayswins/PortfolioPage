@@ -201,7 +201,7 @@ export const PROJECTS_DATA: Project[] = [
     {
         title: 'Portfolio Website',
         description: 'A modern full-stack portfolio with Prisma + PostgreSQL backend, visitor analytics, JWT auth, and Gemini AI assistant.',
-        longDescription: 'A high-performance, responsive portfolio website developed with React 18, TypeScript, Vite, Tailwind CSS, and Framer Motion. Includes visitor tracking & analytics API, role-based admin access (JWT), AI chatbot integration (Google Gemini), secure contact form, dark mode, smooth transitions, and serverless deployment on Vercel with Neon PostgreSQL.',
+        longDescription: 'A high-performance, responsive portfolio website developed with React 18, TypeScript, Vite, Tailwind CSS, and Framer Motion. Includes secure contact forms with CAPTCHA, real-time visitor analytics powered by PostgreSQL & Prisma, JWT-based admin authentication, and an intelligent AI chatbot integrated with Google Gemini — all deployed serverlessly on Vercel with Neon.',
         imageUrl: 'https://res.cloudinary.com/dyycmwk8h/image/upload/v1772076719/devices_xexikj.webp',
         tags: ['Full-stack', 'React', 'TypeScript', 'Node.js', 'Prisma','TailwindCSS'],
         repoUrl: 'https://github.com/Lexiealwayswins/PortfolioPage',
@@ -245,6 +245,35 @@ export const PROJECTS_DATA: Project[] = [
         liveUrl: '#',
     },
 ];
+
+// -- JOURNEY ---
+export const JOURNEY_DATA = [
+    {
+        year: '2025 - Present',
+        role: 'Full Stack Developer',
+        company: 'MoreThinks Solutions',
+        description: 'Architected a scalable full-stack platform by building responsive user interfaces with React/Qwik, optimizing SurrealDB schemas for high-concurrency features, and integrating Python-based ML pipelines for automated content moderation. Additionally, streamlined AWS CI/CD deployments and fortified cloud security by permanently resolving a high-risk authentication session leakage within CloudFront and S3.',
+    },
+    {
+        year: '2024 - 2025',
+        role: 'Master in Applied Computer Science',
+        company: 'Fairleigh Dickinson University',
+        description: 'Specialized in data structure, algorithmic problem-solving, full-stack development, and advanced software architecture.   Graduated with a 3.85 GPA, solidifying the theoretical and practical engineering principles required to build scalable enterprise applications.',
+    },
+    {
+        year: '2019 - 2022',
+        role: 'Web Developer & Business Analyst',
+        company: 'Ping An Insurance Company',
+        description: 'Bridged business operations and technical execution by developing interactive React dashboards that visualized complex sales metrics, reducing manual Excel reliance by 80%. Engineered a secure Node.js middleware layer with LDAP/JWT authentication, and accelerated system load times by 95% through strategic Redis caching and Docker containerization.',
+    },
+    {
+        year: '2017 - 2019',
+        role: 'Master in Glocal Finance & Economy',
+        company: 'Yonsei University',
+        description: 'Built a strong foundation in quantitative analysis, financial modeling, and economic strategy. This analytical background paved the way for bridging complex business requirements with technical solutions in the financial sector.',
+    },
+];
+
 
 // --- TESTIMONIALS ---
 export const TESTIMONIALS_DATA = [

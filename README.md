@@ -1,8 +1,6 @@
 # Full-Stack Portfolio & Personal Page
 
-Modern, responsive personal portfolio website showcasing full stack development and creative work.
-
-Built with a clean, performant tech stack and includes contact form, visitor tracking, admin analytics, and AI chatbot assistance.
+A modern, responsive, high-performance full stack portfolio website, featuring secure contact forms with CAPTCHA, real-time visitor analytics powered by PostgreSQL & Prisma, JWT-based admin authentication, and an intelligent AI chatbot integrated with Google Gemini — all deployed serverlessly on Vercel with Neon.
 
 Live Demo: [https://portfolio-page-two-ruddy.vercel.app/](https://portfolio-page-two-ruddy.vercel.app/)  
 

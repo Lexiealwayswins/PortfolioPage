@@ -1,33 +1,7 @@
 // FIX: Create content for the file to define the Journey component.
 import React from 'react';
 import { motion } from 'framer-motion';
-
-const JOURNEY_DATA = [
-    {
-        year: '2025 - Present',
-        role: 'Full Stack Developer',
-        company: 'MoreThinks Solutions',
-        description: 'Architecting scalable web applications and optimizing system performance. Integrating machine learning pipelines and managing Dockerized microservices with automated CI/CD deployments on AWS.',
-    },
-    {
-        year: '2024 - 2025',
-        role: 'Master in Applied Computer Science',
-        company: 'Fairleigh Dickinson University',
-        description: 'Cultivated advanced expertise in software architecture, algorithms, and modern web technologies, graduating with a 3.85 GPA to solidify a strong engineering foundation.',
-    },
-    {
-        year: '2019 - 2022',
-        role: 'Web Developer & Business Analyst',
-        company: 'Ping An Insurance Company',
-        description: 'Bridged business operations with technical solutions by developing enterprise React dashboards and secure Node.js middleware. Optimized system architecture using Redis and Docker, reducing load times by 95%.',
-    },
-    {
-        year: '2017 - 2019',
-        role: 'Master in Glocal Finance & Economy',
-        company: 'Yonsei University',
-        description: 'Built a strong foundation in quantitative analysis, financial modeling, and economic strategy. This analytical background paved the way for bridging complex business requirements with technical solutions in the financial sector.',
-    },
-];
+import { JOURNEY_DATA } from '../constants';
 
 const Journey: React.FC = () => {
     return (
