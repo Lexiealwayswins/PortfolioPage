@@ -15,6 +15,13 @@
   ],
   "routes": [
     {
+      "src": "/(.*)",
+      "headers": {
+        "Content-Security-Policy": "default-src 'self'; script-src 'self' https://challenges.cloudflare.com 'unsafe-inline' 'unsafe-eval'; frame-src 'self' https://challenges.cloudflare.com https://*.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com https://*.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.cloudflare.com;"
+      },
+      "continue": true
+    },
+    {
       "src": "/api/(.*)",                 
       "dest": "api/src/index.ts"
     },
@@ -24,17 +31,6 @@
     {
       "src": "/(.*)",                
       "dest": "/"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' https://challenges.cloudflare.com 'unsafe-inline' 'unsafe-eval'; frame-src 'self' https://challenges.cloudflare.com https://*.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com https://*.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.cloudflare.com;"
-        }
-      ]
     }
   ]
 }
