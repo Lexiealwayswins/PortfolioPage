@@ -35,7 +35,7 @@ const ContactForm: React.FC = () => {
             sitekey: siteKey,
             theme: 'auto',           
             size: 'normal',
-            appearance: 'execute',    // 'always', 'interaction-only' or 'execute'
+            appearance: 'always',    // 'always', 'interaction-only' or 'execute'
             callback: (token: string) => {
               setTurnstileToken(token);
             },
