@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "cd api && prisma generate && cd .. && node ./scripts/generate-sitemap.mjs && vite build",
+    "build": "prisma generate --schema=./api/prisma/schema.prisma && node ./scripts/generate-sitemap.mjs && vite build",
     "preview": "vite preview",
     "api:dev": "cd api && npm run dev",
     "api:install": "cd api && npm install",
