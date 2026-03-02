@@ -55,13 +55,9 @@ app.use(cors({
 }));
 
 // API Routes (must come before static files)
-// app.use('/api/visitors', visitorRoutes);
-// app.use('/api/contact', contactRoutes);
-// app.use('/api/auth', authRoutes);
-
-app.use('/visitors', visitorRoutes);
-app.use('/contact', contactRoutes);
-app.use('/auth', authRoutes);
+app.use('/api/visitors', visitorRoutes);
+app.use('/api/contact', contactRoutes);
+app.use('/api/auth', authRoutes);
 
 // Security Middleware
 app.use(helmet({
@@ -152,11 +148,8 @@ const contactLimiter = rateLimit({
 });
 
 // Apply rate limiting
-// app.use('/api/', limiter);
-// app.use('/api/contact', contactLimiter);
-
-app.use('/', limiter);
-app.use('/contact', contactLimiter);
+app.use('/api/', limiter);
+app.use('/api/contact', contactLimiter);
 
 // Prevent HTTP Parameter Pollution
 app.use(hpp());
@@ -170,11 +163,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // Health check
-// app.get('/api/health', (req, res) => {
-//   res.json({ status: 'ok', message: 'Server is running' });
-// });
-
-app.get('/health', (req, res) => {
+app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Server is running' });
 });
 
