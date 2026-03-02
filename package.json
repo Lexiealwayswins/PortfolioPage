@@ -5,14 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node ./scripts/generate-sitemap.mjs && vite build",
+    "build": "cd api && prisma generate && cd .. && node ./scripts/generate-sitemap.mjs && vite build",
     "preview": "vite preview",
-    "server:dev": "cd server && npm run dev",
-    "server:install": "cd server && npm install",
-    "server:build": "cd server && npm run build",
-    "server:start": "cd server && npm start",
-    "build:all": "npm run build && cd server && npm run build",
-    "start": "cd server && npm start"
+    "api:dev": "cd api && npm run dev",
+    "api:install": "cd api && npm install",
+    "api:build": "cd api && npm run build",
+    "api:start": "cd api && npm start",
+    "build:all": "npm run build && cd api && npm run build",
+    "start": "cd api && npm start"
   },
   "dependencies": {
     "@google/genai": "^1.27.0",
