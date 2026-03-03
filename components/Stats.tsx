@@ -44,7 +44,7 @@ const Stats: React.FC = () => {
       className="flex flex-wrap justify-center gap-8 sm:gap-12 md:gap-16"
     >
       <div className="text-center">
-        <h3 className="text-3xl sm:text-4xl font-bold text-slate-800 dark:text-white"><AnimatedNumber value={4} /></h3>
+        <h3 className="text-3xl sm:text-4xl font-bold text-slate-800 dark:text-white"><AnimatedNumber value={6} /></h3>
         <p className="text-sm sm:text-base text-slate-600 dark:text-gray-400">Years of Experience</p>
       </div>
       <div className="text-center">

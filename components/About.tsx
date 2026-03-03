@@ -19,7 +19,7 @@ const About: React.FC = () => {
             I am Lexie, a strategic Full-Stack Developer and creative problem-solver, driven by the pursuit of engineering excellence and user-centric design. My expertise spans modern web development, robust backend architecture, AI integration, and cloud deployment.
           </p>
           <p className="text-sm sm:text-base text-slate-600 dark:text-gray-300 mb-4">
-            With a passion for building products that make a real impact, I merge clean code, scalable system design, and business strategy to create seamless digital experiences. Drawing on over 4 years of industry experience, I thrive on translating complex business challenges into elegant, high-performance solutions.
+            With a passion for building products that make a real impact, I merge clean code, scalable system design, and business strategy to create seamless digital experiences. Drawing on over 6 years of industry experience, I thrive on translating complex business challenges into elegant, high-performance solutions.
           </p>
           <p className="text-sm sm:text-base text-slate-600 dark:text-gray-300 mb-4">
             Whether I'm optimizing database architectures for lightning-fast speeds, deploying automated machine learning pipelines, or crafting intuitive frontend interfaces, my goal is to transform ideas into reality with precision and a relentless drive for quality.
