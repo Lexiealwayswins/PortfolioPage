@@ -86,7 +86,7 @@ app.use(helmet({
       ],
       imgSrc: ["'self'", "data:", "https:", "https://*.cloudflare.com"],
       fontSrc: ["'self'", "https://fonts.gstatic.com", "data:"],
-      connectSrc: ["'self'", "http://localhost:5001", "https://portfolio-page-two-ruddy.vercel.app", "https://challenges.cloudflare.com", "https:"],
+      connectSrc: ["'self'", "http://localhost:5001", "https://portfolio-page-two-ruddy.vercel.app", "https://challenges.cloudflare.com", "https://generativelanguage.googleapis.com","https:"],
       upgradeInsecureRequests: []
     }
   },
@@ -122,7 +122,7 @@ app.use((req, res, next) => {
   );
   res.setHeader( 
     "Content-Security-Policy", 
-    "default-src 'self'; script-src 'self' https://challenges.cloudflare.com 'unsafe-inline'; frame-src 'self' https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com;" )
+    "default-src 'self'; script-src 'self' https://challenges.cloudflare.com 'unsafe-inline'; frame-src 'self' https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com https://generativelanguage.googleapis.com;" )
   ;
   // Reduce XSS risk from inline event handlers (kept 'unsafe-inline' in CSP for now due to setup)
   res.setHeader('X-Permitted-Cross-Domain-Policies', 'none');
