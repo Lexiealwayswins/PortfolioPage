@@ -1,16 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GithubIcon, YoutubeIcon, LinkedInIcon, TwitterIcon, FacebookIcon, MailIcon, LocationIcon, PageIcon } from '../constants';
+import { MailIcon, LocationIcon } from '../constants';
+import { SOCIAL_LINKS } from '../constants';
 
 const Card: React.FC = () => {
-  const socialLinks = [
-    { Icon: PageIcon, href: 'https://portfolio-page-two-ruddy.vercel.app/', label: 'PortfolioPage' },
-    { Icon: GithubIcon, href: 'https://github.com/Lexiealwayswins', label: 'GitHub' },
-    { Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/lexie-duan-95aa23306/', label: 'LinkedIn' },
-    // { Icon: YoutubeIcon, href: '#', label: 'YouTube' },
-    // { Icon: TwitterIcon, href: '#', label: 'Twitter' },
-    // { Icon: FacebookIcon, href: '#', label: 'Facebook' },
-  ];
   return (
     <section id="card" className="py-12 sm:py-16 md:py-20">
       <div className="max-w-md mx-auto">
@@ -74,7 +67,7 @@ const Card: React.FC = () => {
               A Software Engineer with a passion for building products that make a real impact.
             </p> */}
             <div className="flex items-center justify-center space-x-6 pb-4">
-              {socialLinks.map(({ Icon, href, label }) => (
+              {SOCIAL_LINKS.map(({ Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}

@@ -126,12 +126,23 @@ export const NAV_LINKS = [
     { name: 'Contact', href: '#contact' },
 ];
 
+export const SOCIAL_LINKS = [
+    { Icon: PageIcon, href: 'https://portfolio-page-two-ruddy.vercel.app/', label: 'PortfolioPage' },
+    { Icon: GithubIcon, href: 'https://github.com/Lexiealwayswins', label: 'GitHub' },
+    { Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/lexieduan/', label: 'LinkedIn' },
+    // { Icon: YoutubeIcon, href: '#', label: 'YouTube' },
+    // { Icon: TwitterIcon, href: '#', label: 'Twitter' },
+    // { Icon: FacebookIcon, href: '#', label: 'Facebook' },
+];
+
 // --- STATS ---
 export const STATS_DATA: Stat[] = [
-    { value: 10, label: 'Years of Experience' },
-    { value: 50, label: 'Projects Completed' },
-    { value: 100, label: 'Happy Clients' },
+    { value: 6, label: 'Years of Experience' },
+    { value: 25, label: 'Projects Completed' },
+    { value: 50, label: 'Happy Clients' },
 ];
+
+
 
 // --- EXPERTISE ---
 // export const EXPERTISE_DATA = [

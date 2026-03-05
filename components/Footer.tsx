@@ -1,5 +1,6 @@
 import React from 'react';
-import { GithubIcon, YoutubeIcon, LinkedInIcon, TwitterIcon, FacebookIcon, MailIcon, PageIcon } from '../constants';
+import { GithubIcon, LinkedInIcon, MailIcon} from '../constants';
+import { SOCIAL_LINKS } from '../constants';
 
 interface FooterProps {
   onPrivacyClick?: () => void;
@@ -13,15 +14,6 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = (props) => {
-  const socialLinks = [
-    { Icon: PageIcon, href: 'https://portfolio-page-two-ruddy.vercel.app/', label: 'PortfolioPage' },
-    { Icon: GithubIcon, href: 'https://github.com/Lexiealwayswins', label: 'GitHub' },
-    { Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/lexie-duan-95aa23306/', label: 'LinkedIn' },
-    // { Icon: YoutubeIcon, href: '#', label: 'YouTube' },
-    // { Icon: TwitterIcon, href: '#', label: 'Twitter' },
-    // { Icon: FacebookIcon, href: '#', label: 'Facebook' },
-  ];
-
   return (
     <footer className="bg-slate-100 dark:bg-slate-950 dark:border-t dark:border-slate-800/50 py-8 sm:py-12 px-4 sm:px-6 lg:px-8 relative z-10">
       <div className="max-w-7xl mx-auto">
@@ -36,7 +28,7 @@ const Footer: React.FC<FooterProps> = (props) => {
               Software Engineer, Full-Stack Developer, System Optimizer, Problem Solver. Building innovative web applications that make a real impact.
             </p>
             <div className="flex items-center space-x-3">
-              {socialLinks.map(({ Icon, href, label }) => (
+              {SOCIAL_LINKS.map(({ Icon, href, label }) => (
                 <a
                   key={label}
                   href={href}
@@ -91,7 +83,7 @@ const Footer: React.FC<FooterProps> = (props) => {
               </li>
               <li className="flex items-center space-x-2 text-sm text-slate-600 dark:text-gray-300">
                 <LinkedInIcon className="w-4 h-4 text-orange-500" />
-                <a href="https://www.linkedin.com/in/lexie-duan-95aa23306/" className="hover:text-blue-500 transition-colors">
+                <a href="https://www.linkedin.com/in/lexieduan/" className="hover:text-blue-500 transition-colors">
                   Lexie Duan
                 </a>
               </li>
