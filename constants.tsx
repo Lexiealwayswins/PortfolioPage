@@ -260,7 +260,7 @@ export const PROJECTS_DATA: Project[] = [
 // -- JOURNEY ---
 export const JOURNEY_DATA = [
     {
-        year: '2025 - Present',
+        year: '2025 - 2026',
         role: 'Full Stack Developer',
         company: 'MoreThinks Solutions',
         description: 'Architected a scalable full-stack platform by building responsive user interfaces with React/Qwik, optimizing SurrealDB schemas for high-concurrency features, and integrating Python-based ML pipelines for automated content moderation. Additionally, streamlined AWS CI/CD deployments and fortified cloud security by permanently resolving a high-risk authentication session leakage within CloudFront and S3.',

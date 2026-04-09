@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ThemeToggle from './ThemeToggle';
 import { NAV_LINKS } from '../constants';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { handleSectionClick, scrollToSection } from '../utils/scrollUtils';
+import { handleSectionClick} from '../utils/scrollUtils';
 
 interface HeaderProps {
     activeSection: string;
