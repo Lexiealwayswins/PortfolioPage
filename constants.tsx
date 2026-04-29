@@ -238,12 +238,12 @@ export const PROJECTS_DATA: Project[] = [
         // caseStudySlug: 'dataviz-dashboard',
     },
     {
-        title: 'Task Dashboard',
-        description: 'Production-ready full-stack Task Dashboard with React and Django.',
-        longDescription: 'A clean, modern, full-stack Task Dashboard application that demonstrates best practices for both development and production deployment with Docker & Nginx + uWSGI.',
+        title: 'Lender Matching Platform',
+        description: 'An intelligent, full-stack FinTech loan underwriting and lender matching platform built with React and FastAPI.',
+        longDescription: 'A robust loan underwriting system that evaluates business finance applications against dynamic credit policies. It features an extensible policy engine, transparent "Fit Score" rankings, and distributed backend workflows using Hatchet for parallelized matching and automated retries.',
         imageUrl: 'https://res.cloudinary.com/dyycmwk8h/image/upload/v1772079245/todo_dashboards_bl2nyo.png',
-        tags: ['Full-stack', 'React', 'Django', 'Docker', 'Nginx', 'uWSGI'],
-        repoUrl: 'https://github.com/Lexiealwayswins/TaskDashboard',
+        tags: ['Full-stack', 'FinTech', 'React', 'TypeScript', 'FastAPI', 'PostgreSQL', 'Hatchet'],
+        repoUrl: 'https://github.com/Lexiealwayswins/lender-matching-platform/',
         liveUrl: '#',
     },
     {
